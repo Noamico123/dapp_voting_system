@@ -51,14 +51,14 @@ function Elections(props) {
           const election = new web3.eth.Contract(Electionabi.abi, networkData.address);
             
           const candidate1 = await election.methods.candidates(1).call();
-          // const candidate1Id = candidate1.id;
-          // const candidate1Name = candidate1.name;
-          // const candidate1Count = candidate1.voteCount;
+          const candidate1Id = candidate1.id;
+          const candidate1Name = candidate1.name;
+          const candidate1Count = candidate1.voteCount;
   
           const candidate2 = await election.methods.candidates(2).call();
-          // const candidate2Id = candidate2.id;
-          // const candidate2Name = candidate2.name;
-          // const candidate2Count = candidate2.voteCount;
+          const candidate2Id = candidate2.id;
+          const candidate2Name = candidate2.name;
+          const candidate2Count = candidate2.voteCount;
           
           setCandidate1(candidate1);
           setCandidate2(candidate2);
@@ -73,8 +73,20 @@ function Elections(props) {
         } else {
             window.alert("The smart contract is not deployed to current network")
         }
-        
     }
+
+    const voteCandidate = async(candidateId) => {
+        setLoader(true);
+        await electionSmartContract
+        .methods
+        .vote(candidateId)
+        .send({from: currentAccount})
+        .on('transactionhash', () => {
+            console.log('succesfully run');
+        });
+        setLoader(false);
+    }
+
 
     if(loader) {
         return (<div>loading...</div>)
@@ -83,7 +95,11 @@ function Elections(props) {
 
     return (
         <div>
-            <ElectionBody candidate1={Candidate1} candidate2={Candidate2} account={currentAccount}></ElectionBody>
+            <ElectionBody 
+                candidate1={Candidate1} 
+                candidate2={Candidate2} 
+                account={currentAccount}
+                voteCandidate={voteCandidate}/>
         </div>
 
     )
