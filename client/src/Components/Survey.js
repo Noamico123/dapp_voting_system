@@ -2,10 +2,10 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import Web3 from 'web3'
 import Electionabi from '../contracts/Election.json'
-import ElectionBody from '../Components/ElectionBody'
+import SurveyBody from '../Components/SurveyBody'
 
 
-function Elections(props) {
+function Survey(props) {
 
     useEffect(() => {
         loadWeb3();
@@ -88,7 +88,7 @@ function Elections(props) {
 
     return (
         <div>
-            <ElectionBody 
+            <SurveyBody 
                 candidate1={Candidate1} 
                 candidate2={Candidate2} 
                 account={currentAccount}
@@ -99,4 +99,4 @@ function Elections(props) {
 
 }
 
-export default Elections;
+export default Survey;
