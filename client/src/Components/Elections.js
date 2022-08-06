@@ -73,18 +73,17 @@ function Elections(props) {
         } else {
             window.alert("The smart contract is not deployed to current network")
         }
-  
-        if(loader) {
-          return <div>loading...</div> 
-  
-        }
         
     }
 
+    if(loader) {
+        return (<div>loading...</div>)
+
+    }
 
     return (
         <div>
-            <ElectionBody candidate1={Candidate1} candidate2={Candidate2}></ElectionBody>
+            <ElectionBody candidate1={Candidate1} candidate2={Candidate2} account={currentAccount}></ElectionBody>
         </div>
 
     )
