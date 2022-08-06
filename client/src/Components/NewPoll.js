@@ -11,6 +11,7 @@ const promptRef = useRef();
 
     return (
         <Container>
+            <h2 style={{margin: "5vh"}}>Create New Poll:</h2>
             <Form style={{margin: "5vh"}} striped bordered hober>
                 <Form.Group className='mb-3'>
                     <Form.Label>Candidate 1 Name</Form.Label>

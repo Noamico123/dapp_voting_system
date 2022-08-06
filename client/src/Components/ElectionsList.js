@@ -14,11 +14,12 @@ const ElectionsList = props => {
 
     return (
         <Container>
+            <h2 style={{margin: "5vh"}}>Polls List:</h2>
             <Table style={{margin: "5vh"}} striped bordered hober>
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>List Of Polls</th>
+                        <th>Poll Name</th>
                         <th>Go to Poll</th>
                     </tr>
                 </thead>

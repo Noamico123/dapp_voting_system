@@ -31,7 +31,7 @@ const ElectionBody = ( {candidate1, candidate2, account} ) => {
                 </tbody>
             </Table>
 
-            <p style={{margin: "5vh"}} striped bordered hober>Current voter address: {account}</p>
+            <p style={{margin: "5vh"}} striped bordered hober>Voter address: {account}</p>
         </Container>
     )
 };

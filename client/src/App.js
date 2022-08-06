@@ -17,7 +17,7 @@ function App() {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav>
-                <Nav.Link href="/new_poll">New Pool</Nav.Link>
+                <Nav.Link href="/new_poll">New Poll</Nav.Link>
                 <Nav.Link href="/election_list">Election List</Nav.Link>
               </Nav>
             </Navbar.Collapse>
