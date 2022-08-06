@@ -51,14 +51,14 @@ function Elections(props) {
           const election = new web3.eth.Contract(Electionabi.abi, networkData.address);
             
           const candidate1 = await election.methods.candidates(1).call();
-          const candidate1Id = candidate1.id;
-          const candidate1Name = candidate1.name;
-          const candidate1Count = candidate1.voteCount;
+        //   const candidate1Id = candidate1.id;
+        //   const candidate1Name = candidate1.name;
+        //   const candidate1Count = candidate1.voteCount;
   
           const candidate2 = await election.methods.candidates(2).call();
-          const candidate2Id = candidate2.id;
-          const candidate2Name = candidate2.name;
-          const candidate2Count = candidate2.voteCount;
+        //   const candidate2Id = candidate2.id;
+        //   const candidate2Name = candidate2.name;
+        //   const candidate2Count = candidate2.voteCount;
           
           setCandidate1(candidate1);
           setCandidate2(candidate2);
